@@ -1,0 +1,29 @@
+source /opt/ros/humble/setup.bash
+
+source ./install/setup.bash
+
+colcon build --packages-select test_pkg		(build only test_pkg)
+
+colcon build --symlink-install	(build full workspace)
+
+ros2 launch test_pkg test_pkg_launch_file.launch.py	(launch the program)	[ros2 launch <pkg_name> <launch_file>]
+
+ros2 topic list	(list all active topic)
+
+ros2 topic echo <topic name>		(to see topic data)
+
+ros2 topic info /cmd_vel	('cmd_vel' topic info)	[ros2 topic info <topic_name>]
+
+ros2 interface show <interface_name>	(show info about the interface)
+ros2 interface show geometry_msgs/msg/Twist
+
+ros2 topic pub <topic_name> <interface_name> <message>
+
+	-to stop the robot:
+ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+
+	-start the simulator:
+ros2 launch webots_ros2_mavic robot_launch.py
+
+	-start falcon:
+ros2 launch fd_bringup fd.launch.py

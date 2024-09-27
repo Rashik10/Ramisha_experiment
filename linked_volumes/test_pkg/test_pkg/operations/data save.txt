@@ -1,0 +1,14 @@
+t: 0
+
+
+with passivity:
+{
+speed = 200.5
+force = 400
+}
+
+without passivity:
+{
+speed = 10.5
+force = 400
+}

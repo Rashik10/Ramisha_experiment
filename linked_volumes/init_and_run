@@ -1,0 +1,8 @@
+source /opt/ros/humble/setup.bash && \
+cd /ros2_ws && \
+colcon build --packages-select test_pkg && \
+# colcon build --symlink-install && \
+source /ros2_ws/install/setup.bash &&
+source /ros2_ws/src/install/setup.bash &&
+cd /
+# ros2 launch fd_bringup fd.launch.py
