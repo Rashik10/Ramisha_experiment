@@ -1,0 +1,1 @@
+docker build -f passive_teleoperation.dockerfile -t passive_teleoperation .

@@ -1,0 +1,13 @@
+# container 1
+ros2 launch fd_bringup fd.launch.py
+
+# container 2
+## NO ros2 launch --- too slow
+ros2 run test_pkg simulation_node
+
+# container 2alt
+ros2 run test_pkg experiment_node
+
+source init_and_run
+ros2 launch fd_bringup fd.launch.py & sleep 10 && ros2 run test_pkg simulation_node
+ros2 launch fd_bringup fd.launch.py & sleep 10 && ros2 run test_pkg experiment_node
